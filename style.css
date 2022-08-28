@@ -1,0 +1,435 @@
+*{
+    margin: 0;
+}
+body{
+    font-family: 'Roboto',sans-serif;
+}
+.navbar{
+    width: 100%;
+    height: 50px;
+    background-color: black;
+}
+.navbar-container{
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    height: 100%;
+    color: white;
+    font-family: 'Sen',sans-serif;
+}
+.logo-container{
+    flex: 1;
+    color: #4dbf00;
+}
+.logo{
+    font-family: 'Sen',sans-serif;
+    font-size: 30px;
+    cursor: pointer;
+}
+.menu-container{
+    flex: 6;
+}
+.menu-list{
+    display: flex;
+    list-style: none;
+}
+.menu-list-item{
+    margin-right: 30px;
+}
+.menu-list-item.active{
+    font-weight: bold;
+}
+.menu-list a{
+    text-decoration: none;
+    color:inherit;
+}
+.profile-container{
+    flex: 2;
+    display: flex;
+    align-items: center;
+    font-family: 'Sen',sans-serif;
+    justify-content: flex-end;
+}
+.profile-text-container{
+    margin: 0 20px;
+}
+.profile-picture{
+    width: 35px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.dropdownbtn{
+    background-color: inherit;
+    color: inherit;
+    border: none;
+    cursor: pointer;
+}
+.dropdown-content{
+    display: none;
+    background-color: white;
+    min-width: 80px;
+    position: absolute;
+    font-style:'Sen',sans-serif;
+}
+.dropdown-content.active{
+    background-color: black;
+}
+.dropdown-content a.active{
+    color:white;
+}
+.dropdown-content a{
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover{
+    background-color: rgba(0,0,0,0.2);
+}
+.dropdown-content a:hover.active{
+    background-color: rgba(255,255,255,0.7);
+}
+.toggle{
+    width: 40px;
+    height: 20px;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    transition: 1s all ease;
+}
+.toggle-icon{
+    color: goldenrod;
+}
+.toggle-ball{
+    width: 18px;
+    height: 18px;
+    background-color: black;
+    position: absolute;
+    right: 1;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.sidebar{
+    height: 100%;
+    width: 50px;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+}
+.left-menu-icon{
+    color:white;
+    font-size: 25px;
+    margin-top: 40px;
+    cursor: pointer;
+}
+.container{
+    background-color: #151515;
+    min-height: calc(100vh - 50px);
+    color:white;
+}
+.content-container{
+    margin-left: 50px;
+}
+.featured-content{
+    height: 50vh;
+    padding: 50px;
+}
+.featured-title{
+    width: 250px;
+}
+.featured-desc{
+    width: 500px;
+    padding: 30px 0;
+    color:lightgray;
+}
+.featured-button{
+    background-color: #4dbf00;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+.movie-list-container{
+    padding: 0 20px;
+    margin: 20px 0;
+}
+.movie-list-wrapper{
+    position: relative;
+    overflow: hidden;
+}
+.movie-list{
+    display: flex;
+    height: 300px;
+    align-items: center;
+    transform: translateX(0);
+    transition: all 1s ease-in-out;
+}
+.movie-list-title{
+    margin: 10px 0;
+}
+.movie-list-item{
+    margin-right: 33px;
+    position: relative;
+}
+.movie-list-item:hover .movie-list-item-img{
+    transform: scale(1.2);
+    margin: 0 30px;
+    opacity: 0.5;
+}
+.movie-list-item-img{
+    transition: all 1s ease-in-out;
+    width: 325px;
+    height: 285px;
+    object-fit:fill;
+    border-radius: 20px;
+}
+.movie-list-item-title{
+    padding: 0 10px;
+    font-size: 32px;
+    font-weight: bold;
+    position: absolute;
+    top:10%;
+    left: 50px;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+}
+.movie-list-item-desc{
+    padding: 10px;
+    font-size: 14px;
+    position: absolute;
+    top:30%;
+    left: 50px;
+    width: 220px;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+}
+.movie-list-item-button{
+    padding: 10px;
+    color: white;
+    background-color: #4dbf00;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+}
+.movie-list-item:hover .movie-list-item-title,
+.movie-list-item:hover .movie-list-item-desc,
+.movie-list-item:hover .movie-list-item-button{
+    opacity: 1;
+}
+.arrow{
+    font-size: 15px;
+    position: absolute;
+    top: 80px;
+    font-size: 120px;
+    right: 0;
+    color:lightgray;
+    opacity: 0.5;
+    cursor: pointer;
+}
+.container.active{
+    background-color: white;
+}
+.u_container.active{
+    background-color: white;
+    color: black;
+}
+.watch-container.active{
+    background-color: white;
+    color:black;
+}
+.movie-list-title.active{
+    color: black;
+}
+.navbar-container.active{
+    background-color: white;
+    color: black;
+}
+.sidebar.active{
+    background-color: white;
+}
+.left-menu-icon.active{
+    color: black;
+}
+.toggle.active{
+    background-color: black;
+}
+.toggle-ball.active{
+    background-color: white;
+    transform: translateX(-20px);
+}
+.u_container{
+    background-color: #151515;
+    min-height: calc(100vh - 50px);
+    color:white;
+    margin-left: 50px;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.users{
+    display: flex;
+    flex-direction: row;
+}
+.user1, .user2, .user3{
+    cursor: pointer;
+}
+.uicon{
+    border: 5px solid white;
+    border-radius: 20%;
+    font-size: 150px;
+    margin-right: 50px;
+    padding: 10px 15px;
+
+}
+.utext{
+    font-size: 20px;
+    text-align: initial;
+    margin-left: 48px;
+    margin-top: 5px;
+}
+.uicon:hover{
+    background-color: slategray;
+}
+.watch-container{
+    background-color: #151515;
+    min-height: calc(100vh - 50px);
+    color:white;
+    margin-left: 50px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.watch-head{
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 35px;
+}
+.watchUsers{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.wuser{
+    font-size: 90px;
+}
+.time{
+    font-size: 30px;
+    margin-left: 20px;
+}
+.user-text{
+    font-size: 20px;
+    position: initial;
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+.cart-container{
+    display: none;
+    background-color: #151515;
+    min-height: calc(100vh - 50px);
+    color:white;
+    margin-left: 50px;
+}
+.cart-container.active{
+    background-color: white;
+    color: black;
+}
+.cart-head{
+    text-align: center;
+    font-size: 45px;
+    padding: 10px 0;
+}
+.cart-items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cart-img{
+    width: 15%;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 50px;
+}
+.cartImg{
+    width: 400px;
+    height: 250px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+.details{
+    height: 100%;
+}
+.title{
+    padding-top: 5px;
+    line-height: 10px;
+    font-size: 36px;
+    font-weight: 900;
+}
+.genre{
+    font-size: 18px;
+    line-height: 10px;
+    margin-top: 16px;
+    font-weight: 500;
+}
+.prices{
+    text-align: right;
+    margin-right: 90px;
+    font-size: 30px;
+}
+.search-container{
+    background-color: #151515;
+    min-height: calc(100vh - 50px);
+    color:white;
+    margin-left: 50px;
+    text-align: center;
+    display: none;
+}
+.search-container .movie-list{
+    margin-left: 10px;
+}
+.search-container.active{
+    background-color: white;
+    color: black;
+}
+.searchInput{
+    width: 500px;
+    height: 50px;
+    font-size: 22px;
+    border-radius: 20px;
+    padding-left: 10px;
+    margin-top: 80px;
+}
+.searchInput.active{
+    background-color:transparent;
+    color: black;
+}
+.freqHead{
+    font-size: 45px;
+    margin-top:25px ;
+    margin-bottom: 45px;
+}
+@media screen and (max-width:940px) {
+    .menu-container{
+        display: none;
+    }
+}
